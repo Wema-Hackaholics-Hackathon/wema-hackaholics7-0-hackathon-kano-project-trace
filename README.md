@@ -103,6 +103,4 @@ Being direct about this, since it matters for judging:
 
 ---
 
-## Repository note
 
-*[Add a note here linking this submission repository to the full project source, if they live in different places — matching however your team's Classroom/hosting setup is actually structured.]*
