@@ -20,9 +20,12 @@
 
 ## 🚀 Live Demo
 
-*   **Live Application:** [Link to your deployed Vercel/Netlify/Render URL]
-*   **Backend API:** [Link to your live backend API endpoint URL, if separate]
-*   **Recorded Demo:** [Link to your recorded demo explaining how your solution works using Loom]
+*   **Live Application:** https://wema-marketflow-yoosuph.netlify.app  
+*   **Source (full project):** https://github.com/Yoosuph/wema-marketflow  
+*   **Backend API:** Local / demo only for now (Netlify serves the frontend in **preview mode** with seeded demo data; no live bank money)  
+*   **Recorded Demo:** [Link to your Loom walkthrough — pending]
+
+Netlify admin: https://app.netlify.com/projects/wema-marketflow-yoosuph
 
 ---
 
@@ -58,7 +61,7 @@ Every bank-core, identity, bureau, NIBSS, supplier, and production Open Banking 
 *   **Backend:** FastAPI, Pydantic 2, async SQLAlchemy  
 *   **Database:** SQLite (demo)  
 *   **Tooling:** Make, pytest, end-to-end API smoke script  
-*   **Deployment:** [Pending]  
+*   **Deployment:** Netlify (frontend SPA) — https://wema-marketflow-yoosuph.netlify.app  
 *   **AI/APIs:** No LLM credit decisions; Open Banking is optional read-only sandbox  
 
 ---
@@ -71,11 +74,13 @@ Every bank-core, identity, bureau, NIBSS, supplier, and production Open Banking 
 * Node.js 20+ and `pnpm`  
 * Git  
 
-### 1. Clone
+### 1. Clone the full project
+
+This Classroom repo holds the submission README. Full application source:
 
 ```bash
-git clone git@github.com:Wema-Hackaholics-Hackathon/wema-hackaholics7-0-hackathon-kano-project-trace.git
-cd wema-hackaholics7-0-hackathon-kano-project-trace
+git clone https://github.com/Yoosuph/wema-marketflow.git
+cd wema-marketflow
 ```
 
 ### 2. Install dependencies
@@ -136,9 +141,20 @@ make build
 * No LLM approves credit or moves money  
 * Open Banking consent is **read-only** and never authorizes repayment or debit  
 * Production Wema authentication, core settlement, and bureau adapters remain explicit pilot dependencies  
+* The public Netlify site runs in **preview mode** (seeded demo data); it does not connect to production banking systems  
+
+---
+
+## Links
+
+| Resource | URL |
+|---|---|
+| Live demo | https://wema-marketflow-yoosuph.netlify.app |
+| Full source | https://github.com/Yoosuph/wema-marketflow |
+| Classroom submission | https://github.com/Wema-Hackaholics-Hackathon/wema-hackaholics7-0-hackathon-kano-project-trace |
 
 ---
 
 ## Repository note
 
-This GitHub Classroom repository is the **submission remote** for team **Trace**. Application source will be published here when the team is ready to push the full project.
+This GitHub Classroom repository is the **submission remote** for team **Trace**. The complete MarketFlow application lives at [Yoosuph/wema-marketflow](https://github.com/Yoosuph/wema-marketflow) and is deployed on Netlify.
