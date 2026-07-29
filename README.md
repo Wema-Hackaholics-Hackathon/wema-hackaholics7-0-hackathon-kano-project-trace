@@ -1,11 +1,20 @@
-# [Project Title]
+# Wema MarketFlow
+
+**Hackathon:** Wema Hackaholics 7.0 — Kano  
+**Team:** Trace  
+**Track:** Financial Inclusion (Open Banking as supporting intelligence layer)
+
+---
 
 ## Team Members
-- [Name 1]
+
+- Yoosuph (`ylawan658@gmail.com`)
 - [Name 2]
 - [Name 3]
 - [Name 4]
 - [Name 5]
+
+*Replace remaining placeholders with full team member names before final submission.*
 
 ---
 
@@ -13,62 +22,123 @@
 
 *   **Live Application:** [Link to your deployed Vercel/Netlify/Render URL]
 *   **Backend API:** [Link to your live backend API endpoint URL, if separate]
-*   **Recorded Demo:** [Link to your recorded demo explaining how your solution works using Loom].
-
+*   **Recorded Demo:** [Link to your recorded demo explaining how your solution works using Loom]
 
 ---
 
 ## 🎯 The Problem
 
-*Which "How Might We..." question from the challenge brief are you tackling? Show the format by providing an example below.*
+> How might we help cash-heavy micro-retailers turn irregular earnings into verified restock orders on Wema—without another wallet, POS fleet, or unaffordable loan?
 
-> **Example:** How might we help busy people organize their daily tasks more effectively?
+Cash-heavy traders restock in lump sums but earn in small, irregular increments. Formal accounts often do not capture real commercial activity, while self-reported sales are easy to fabricate. Feature-phone users also cannot depend on smartphone-only products.
+
+---
 
 ## ✨ Our Solution
 
-*Provide a short, high-level description of your project. What is your unique idea? What does it do? How does it solve the problem?*
+**Wema MarketFlow** is a Wema-owned **restock rail** for micro-retailers (starting with community pharmacies / licensed PPMVs).
 
-**Example:**
-"Our project, 'TaskMaster,' is a clean and simple to-do list application. It allows users to add tasks, mark them as complete, and sort them by priority. The goal is to provide a straightforward tool to help users stay organized."
+It is **not** a new wallet, marketplace, inventory suite, or generic cash loan. It orchestrates:
+
+1. An optional **restock pocket** funded from qualifying Wema business receipts  
+2. Orders from an **approved supplier catalogue**  
+3. Funding via account balance, pocket, or **agent cash-in** (pending until Wema confirms)  
+4. Dispatch + merchant delivery confirmation + Wema verification → a **three-proof trade record**  
+5. After repeat verified trade, a small **supplier-paid inventory top-up** with disclosed cost  
+6. Repayment only from **qualifying business receipts** under a separate mandate  
+7. Optional **read-only Open Banking** consent for affordability comparison (never debit authority)
+
+Every bank-core, identity, bureau, NIBSS, supplier, and production Open Banking connection in this submission is a **simulated demo adapter**. No real money moves.
 
 ---
 
 ## 🛠️ Tech Stack
 
-*List the major technologies, frameworks, and platforms you used to build your project.*
-
-*   **Frontend:** (e.g., React, Next.js, Tailwind CSS)
-*   **Backend:** (e.g., Node.js with Serverless Functions on Vercel)
-*   **Database:** (e.g., PostgreSQL via Supabase)
-*   **Deployment:** (e.g., Vercel)
-*   **AI/APIs:** (e.g., Google Gemini API)
+*   **Frontend:** React 18, TypeScript, Vite  
+*   **Backend:** FastAPI, Pydantic 2, async SQLAlchemy  
+*   **Database:** SQLite (demo)  
+*   **Tooling:** Make, pytest, end-to-end API smoke script  
+*   **Deployment:** [Pending]  
+*   **AI/APIs:** No LLM credit decisions; Open Banking is optional read-only sandbox  
 
 ---
 
-## ⚙️ How to Set Up and Run Locally (Optional)
+## ⚙️ How to Set Up and Run Locally
 
-*Briefly explain the steps to get your project running on a local machine.*
+### Prerequisites
 
-**Example:**
+* Python 3.11+ (Conda base env is fine)  
+* Node.js 20+ and `pnpm`  
+* Git  
 
-1.  Clone the repository:
-    ```bash
-    git clone [your-repo-link]
-    ```
-2.  Navigate to the project directory:
-    ```bash
-    cd [project-directory]
-    ```
-3.  Install dependencies:
-    ```bash
-    npm install
-    ```
-4.  Create a `.env.local` file and add the necessary environment variables:
-    ```
-    DATABASE_URL=...
-    API_KEY=...
-    ```
-5.  Run the development server:
-    ```bash
-    npm run dev
-    ```
+### 1. Clone
+
+```bash
+git clone git@github.com:Wema-Hackaholics-Hackathon/wema-hackaholics7-0-hackathon-kano-project-trace.git
+cd wema-hackaholics7-0-hackathon-kano-project-trace
+```
+
+### 2. Install dependencies
+
+```bash
+make install
+```
+
+This installs backend Python requirements and frontend packages.
+
+### 3. Start the API
+
+```bash
+make backend-dev
+```
+
+* API: `http://127.0.0.1:8000`  
+* OpenAPI docs: `http://127.0.0.1:8000/docs`  
+
+Equivalent command:
+
+```bash
+cd backend && python -m uvicorn app.main:app --reload --port 8000
+```
+
+### 4. Start the frontend (second terminal)
+
+```bash
+make frontend-dev
+```
+
+* App: `http://127.0.0.1:5173`
+
+### 5. Demo reset
+
+Use **Reset demo** in the app menu, or:
+
+```bash
+curl -X POST http://127.0.0.1:8000/api/v1/demo/reset
+```
+
+### 6. Verify (optional)
+
+```bash
+make test
+make build
+./scripts/smoke_api.py
+```
+
+`smoke_api.py` expects the API to be running on `127.0.0.1:8000`.
+
+---
+
+## Demo Safety
+
+* All merchants, suppliers, stock, receipts, accounts, and identity data are **fictional**  
+* Eligibility is deterministic and bounded by explicit affordability caps  
+* No LLM approves credit or moves money  
+* Open Banking consent is **read-only** and never authorizes repayment or debit  
+* Production Wema authentication, core settlement, and bureau adapters remain explicit pilot dependencies  
+
+---
+
+## Repository note
+
+This GitHub Classroom repository is the **submission remote** for team **Trace**. Application source will be published here when the team is ready to push the full project.
