@@ -20,11 +20,16 @@
 
 ## 🚀 Live Demo
 
-* **Live prototype:** https://wema-trace.vercel.app/
-* **Source:** https://github.com/MKAmmani/trace
-* **Recorded demo:** https://www.youtube.com/shorts/w1IhpzbmEu8
+*   **Live Application:** https://wema-marketflow-yoosuph.netlify.app  
+*   **Backend API:** https://wema-marketflow-api.onrender.com  
+*   **API health:** https://wema-marketflow-api.onrender.com/health  
+*   **Source (full project):** https://github.com/Yoosuph/wema-marketflow  
+*   **Recorded Demo:** [Link to your Loom walkthrough — pending]
 
-The live link is a **static, front-end-only prototype**. There is no backend, no database, and no live connection to any bank system. Everything described below runs entirely in the browser.
+Frontend (Netlify): https://app.netlify.com/projects/wema-marketflow-yoosuph  
+Backend (Render): https://dashboard.render.com/web/srv-d9leu9e7bikc738u2b70  
+
+> Note: Render free tier may cold-start after idle periods (first request can take ~30–60s). No real bank money moves.
 
 ---
 
